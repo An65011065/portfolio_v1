@@ -22,3 +22,21 @@ document.body.onpointermove = event => {
     blob.style.left = `${finalX}px`;
     blob.style.top = `${finalY}px`;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    document.querySelector('.projects').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.querySelector('.project-section').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.querySelector('.experience').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.querySelector('.experience-section').scrollIntoView({ behavior: 'smooth' });
+    });
+
+});
+
+exports.default = series(scssTask, jsTask, browserSyncServe, watchTask);
+// Build Gulp Task
+exports.build = series(scssTask, jsTask);
